@@ -8,6 +8,12 @@
 #define FIZZ_NUMBER 3
 #define BUZZ_NUMBER 5
 
+bool
+first_divisible_by_second ( int first, int second )
+{
+  return (first % second == 0);
+}
+
 int
 main ( void )
 {
@@ -18,8 +24,8 @@ main ( void )
   int i;
   for ( i = 1 ; i < 16 ; i++ )
     {
-      fizz = i % FIZZ_NUMBER == 0;
-      buzz = i % BUZZ_NUMBER == 0;
+      fizz = first_divisible_by_second (i, FIZZ_NUMBER);
+      buzz = first_divisible_by_second (i, BUZZ_NUMBER);
 
       if ( fizz )
         sprintf ( buffer, "fizz" );
@@ -29,7 +35,6 @@ main ( void )
         sprintf ( buffer, "%d", i );
 
       printf ( "%s\n", buffer );
-
       memset ( buffer, 0, STRING_LENGTH_WITH_NULL_AT_END );
     }
   exit ( EXIT_SUCCESS );
