@@ -1,10 +1,10 @@
-#include <stdio.h>   /* printf () */
-#include <stdlib.h>  /* exit () */
-#include <stdbool.h> /* bool */
-#include <string.h>  /* memset (), sprintf () */
-#include <unistd.h>  /* sleep () */
+#include <stdio.h>   /* printf (). */
+#include <stdlib.h>  /* exit (). */
+#include <stdbool.h> /* bool. */
+#include <string.h>  /* memset (), sprintf (). */
+#include <unistd.h>  /* sleep (). */
 
-/* fizzbuzz is 8 characters in length, plus one for null terminator */
+/* fizzbuzz is 8 characters in length, plus one for null terminator. */
 #define STRING_LENGTH_WITH_NULL_AT_END 9
 #define FIZZ_NUMBER 3
 #define BUZZ_NUMBER 5
