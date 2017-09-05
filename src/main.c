@@ -23,6 +23,12 @@ is_first_divisible_by_second ( int first, int second )
   return ( first % second == 0 );
 }
 
+bool
+nor ( bool expr_A, bool expr_B )
+{
+  return !( expr_A || expr_B );
+}
+
 int
 main ( void )
 {
@@ -40,7 +46,7 @@ main ( void )
         sprintf ( buffer, "fizz" );
       if ( is_buzz )
         sprintf ( buffer, "%s%s", buffer, "buzz" );
-      if ( !( is_fizz || is_buzz ) )
+      if ( nor ( is_fizz, is_buzz ) )
         sprintf ( buffer, "%d", i );
 
       #ifdef NUMBER
