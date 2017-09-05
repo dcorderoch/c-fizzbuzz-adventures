@@ -18,7 +18,7 @@ u_sleep ( int microseconds )
 #endif
 
 bool
-first_divisible_by_second ( int first, int second )
+is_first_divisible_by_second ( int first, int second )
 {
   return (first % second == 0);
 }
@@ -27,20 +27,20 @@ int
 main ( void )
 {
   char buffer[STRING_LENGTH_WITH_NULL_AT_END] = { 0 };
-  bool fizz = false;
-  bool buzz = false;
+  bool is_fizz = false;
+  bool is_buzz = false;
 
   int i;
   for ( i = 1 ; i < 16 ; i++ )
     {
-      fizz = first_divisible_by_second (i, FIZZ_NUMBER);
-      buzz = first_divisible_by_second (i, BUZZ_NUMBER);
+      is_fizz = is_first_divisible_by_second (i, FIZZ_NUMBER);
+      is_buzz = is_first_divisible_by_second (i, BUZZ_NUMBER);
 
-      if ( fizz )
+      if ( is_fizz )
         sprintf ( buffer, "fizz" );
-      if ( buzz )
+      if ( is_buzz )
         sprintf ( buffer, "%s%s", buffer, "buzz" );
-      if ( !(fizz || buzz) )
+      if ( !(is_fizz || is_buzz) )
         sprintf ( buffer, "%d", i );
 
       #ifdef NUMBER
