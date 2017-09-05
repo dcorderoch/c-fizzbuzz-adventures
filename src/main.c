@@ -10,6 +10,8 @@
 #define BUZZ_NUMBER 5
 
 #ifdef SLEEP
+#define DELAY 75 /* delay in milliseconds. */
+
 void
 u_sleep ( int microseconds )
 {
@@ -55,7 +57,7 @@ main ( void )
       printf ( "%s\n", buffer );
       memset ( buffer, 0, STRING_LENGTH_WITH_NULL_AT_END );
       #ifdef SLEEP
-      u_sleep ( 75 );
+      u_sleep ( DELAY );
       #endif
     }
   exit ( EXIT_SUCCESS );
