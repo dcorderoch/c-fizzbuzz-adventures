@@ -8,6 +8,8 @@
 #define STRING_LENGTH_WITH_NULL_AT_END 9
 #define FIZZ_NUMBER 3
 #define BUZZ_NUMBER 5
+/* minimum number to see fizzbuzz. */
+#define DEFAULT_FIZZBUZZ_UNTIL 15
 
 #ifdef SLEEP
 #define DELAY 75 /* delay in milliseconds. */
@@ -32,14 +34,19 @@ nor ( bool expr_A, bool expr_B )
 }
 
 int
-main ( void )
+main ( int argc, char ** argv )
 {
+  int fizzbuzz_until = 0;
+  if ( argc < 2 )
+    fizzbuzz_until = DEFAULT_FIZZBUZZ_UNTIL;
+  else
+    fizzbuzz_until = atoi ( argv[1] );
   char buffer[STRING_LENGTH_WITH_NULL_AT_END] = { 0 };
   bool is_fizz = false;
   bool is_buzz = false;
 
   int i;
-  for ( i = 1 ; i < 16 ; i++ )
+  for ( i = 1 ; i <= fizzbuzz_until ; i++ )
     {
       is_fizz = is_first_divisible_by_second ( i, FIZZ_NUMBER );
       is_buzz = is_first_divisible_by_second ( i, BUZZ_NUMBER );
