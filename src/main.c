@@ -2,11 +2,20 @@
 #include <stdlib.h>  /* exit () */
 #include <stdbool.h> /* bool */
 #include <string.h>  /* memset () */
+#include <unistd.h>  /* sleep () */
 
 /* fizzbuzz is 8 characters in length, plus one for null terminator */
 #define STRING_LENGTH_WITH_NULL_AT_END 9
 #define FIZZ_NUMBER 3
 #define BUZZ_NUMBER 5
+
+#ifdef SLEEP
+void
+u_sleep ( int microseconds )
+{
+  usleep ( microseconds * 1000 );
+}
+#endif
 
 bool
 first_divisible_by_second ( int first, int second )
@@ -34,8 +43,14 @@ main ( void )
       if ( !(fizz || buzz) )
         sprintf ( buffer, "%d", i );
 
+      #ifdef NUMBER
+      printf ( "%03d - ", i );
+      #endif
       printf ( "%s\n", buffer );
       memset ( buffer, 0, STRING_LENGTH_WITH_NULL_AT_END );
+      #ifdef SLEEP
+      u_sleep ( 75 );
+      #endif
     }
   exit ( EXIT_SUCCESS );
 }
