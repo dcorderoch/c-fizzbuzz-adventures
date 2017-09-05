@@ -1,7 +1,7 @@
 #include <stdio.h>   /* printf () */
 #include <stdlib.h>  /* exit () */
 #include <stdbool.h> /* bool */
-#include <string.h>  /* memset () */
+#include <string.h>  /* memset (), sprintf () */
 #include <unistd.h>  /* sleep () */
 
 /* fizzbuzz is 8 characters in length, plus one for null terminator */
