@@ -31,6 +31,10 @@ void
 set_fizzbuzz ( int * number_ptr, char * message_buffer );
 
 void
+#ifdef NUMBER
 print_fizzbuzz ( int * number, char * message_buffer );
+#else
+print_fizzbuzz ( char * message_buffer );
+#endif
 
 #endif /* HELPER_FUNCTIONS_H */
