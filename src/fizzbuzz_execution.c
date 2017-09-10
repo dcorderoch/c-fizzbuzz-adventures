@@ -8,6 +8,10 @@ run_fizzbuzz_until_with_buffer ( int number, char * buffer )
     {
       set_fizzbuzz ( &i, buffer );
 
+      #ifdef NUMBER
       print_fizzbuzz ( &i, buffer );
+      #else
+      print_fizzbuzz ( buffer );
+      #endif
     }
 }
