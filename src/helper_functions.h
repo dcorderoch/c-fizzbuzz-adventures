@@ -30,4 +30,7 @@ set_buffer_to_number ( char * buffer, int * number_ptr );
 void
 set_fizzbuzz ( int * number_ptr, char * message_buffer );
 
+void
+print_fizzbuzz ( int * number, char * message_buffer );
+
 #endif /* HELPER_FUNCTIONS_H */

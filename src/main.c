@@ -1,5 +1,5 @@
 #include <stdio.h>   /* printf (). */
-#include <stdlib.h>  /* exit (). */
+#include <stdlib.h>  /* exit (), calloc (). */
 #include <stdbool.h> /* bool. */
 #include <string.h>  /* memset (), sprintf (). */
 
